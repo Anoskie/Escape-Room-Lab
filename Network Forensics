@@ -1,0 +1,12 @@
+# Escape-Room-Lab
+
+- Reconstruct a multi-stage attack by analyzing network traffic, cracking credentials, and reverse engineering malware using Wireshark, John the Ripper, and IDA Pro to identify persistence and C2 commands.
+- IN this scenario we will analyze a security incident involving a compromised virtual machine in a web hosting environment.
+- As SOC analysts, our task is to reconstruct the attack timeline, identify the attack vectors, determine how the system was compromised, and understand what malicious activities were performed on the compromised host. 
+- We will examine the PCAP file to identify initial access methods, analyze authentication attempts, reconstruct file transfers, and reverse engineer malicious code. 
+- Throughout this process, we'll employ fundamental cybersecurity concepts such as traffic analysis, credential security assessment, malware behavior analysis, and persistence mechanism identification.
+
+
+
+         Question 1: What service did the attacker use to gain access to the system?
+
