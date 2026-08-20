@@ -11,4 +11,8 @@
          Question 1: What service did the attacker use to gain access to the system?
 - We begin by uploading the PCAP file in wireshark which is used to capture and analyze real time data traffic across a computer network
 - I used a free web service for wireshark and uploaded the PCAP file. 
--After uploading it displayed details such as the HTTP headers, connection s
+-After uploading it displayed details such as the HTTP headers, connections and open ports. I navigated to open ports and displayed two ports
+      Port 80(HTTP)
+      Port 22(SSH)
+- Secure Shell(SSH) is a network protocol used to for secure remote login from one computer to another. SSH is a recognized network so the attacker must have
+breached or had access to credentials that enabled him/her to acess the system. 
