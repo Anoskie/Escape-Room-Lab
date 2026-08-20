@@ -9,6 +9,7 @@
 
 
          Question 1: What service did the attacker use to gain access to the system?
+
 - We begin by uploading the PCAP file in wireshark which is used to capture and analyze real time data traffic across a computer network
 - I used a free web service for wireshark and uploaded the PCAP file. 
 -After uploading it displayed details such as the HTTP headers, connections and open ports. I navigated to open ports and displayed two ports
@@ -16,3 +17,29 @@
       Port 22(SSH)
 - Secure Shell(SSH) is a network protocol used to for secure remote login from one computer to another. SSH is a recognized network so the attacker must have
 breached or had access to credentials that enabled him/her to acess the system. 
+
+
+
+       Question 2: What attack type was used to gain access to tge system?(one word)
+
+- Decided to download wireshark and use it instead and it is much better since it is not limited in terms of resources.
+
+-Since the conclusion was that the service used was SSH in the previous question, we use the name SSH on the filer on wireshark.
+
+-We investigate the traffic on the SSH and notice that there are two IP adresses that have a suspisiously high traffic of SSH.
+
+-The traffic follows the SSH protocol that consists of protocol, then Key Exchange Init, then Diffie-Hellman Group Exchange Request.
+
+- What makes this alarming is the time difference between the traffic which are milliseconds apart. Normally, a user opens SSH one session at 
+a time which makes this traffic look very suspicious.
+
+- The conclusion is that the method used to gain access was Bruteforce attack. This type of attack involves checking all passwords or
+combinations until the right one is found.
+
+
+
+
+
+
+
+
