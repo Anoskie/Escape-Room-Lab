@@ -9,4 +9,6 @@
 
 
          Question 1: What service did the attacker use to gain access to the system?
-
+- We begin by uploading the PCAP file in wireshark which is used to capture and analyze real time data traffic across a computer network
+- I used a free web service for wireshark and uploaded the PCAP file. 
+-After uploading it displayed details such as the HTTP headers, connection s
