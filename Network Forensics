@@ -37,6 +37,48 @@ a time which makes this traffic look very suspicious.
 combinations until the right one is found.
 
 
+      Question 3: What was the tool the attacker possibly used to perform this attack?
+
+- The conclusion was the the method used to gain access was brute force attack
+
+- What we have to figure out is the name of the tool that is designed to automate the process of attempting multiple usernames and password
+combinations against a target system at high speed until the correct comibation is found
+
+- The name of this tool is called hydra. Hydra is a is a parallelized login cracker which supports numerous protocols to attack. 
+
+- It is very fast and flexible, and new modules are easy to add. This tool is used by researchers to show the ease of gaining
+unauthorised access to a system.
+
+- What made the conclusion that the tool is hydra is when the invesigation of the multiple attempts with a span of milliseconds was done.
+This behaviour of rapid SSH connection attempts is seen in the tool Hydra.
+
+
+    Question 4: How many failed attempts were there?
+
+- Information about attemps are usually encrypted so one cannot just read a list saying "Successful" or "Failed"
+
+- Instead people analyze attemps by investigating packet count, coversation length and TCP stream behaviour.
+
+- So in wireshark, we navigate to Statistics > Coversations and head over to the TCP tab.
+
+- The TCP tab shows a long list which even shows the total number of attemps which are 54. But we are looking for the total number of failed attempts.
+
+- In this case, we investigate the packet count. When an attempt is failed the number of packets ranges from 26 - 28 but when an attempt is successful,
+the total number of packets is more than 28.
+
+- We only need to check the packet count and find the attempts that are more than the 26-28 range and we see there are two attempts consisting of
+ 50 and 468 packets. We remove the two packets and remain with 52 attemps which can be concluded as failed attempts.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
