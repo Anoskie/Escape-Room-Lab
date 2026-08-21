@@ -71,6 +71,26 @@ the total number of packets is more than 28.
 
 
 
+    Question 5: What credentials (username:password) were used to gain access? Refer to shadow.log and sudoers.log?
+
+- After the conclusion that there were a total of 52/54 failed attempts, we have to figure out the credentials entered to gain access
+
+- We use a tool called John the Ripper which is an open-source password security auditing and password recovery tool available for many operating systems.
+
+- This tool is used during penetration testing to identify password vulnerabilities before malicious actors can exploit them.
+
+- John --wordlist=/usr/share/wordlists/rockyou.txt shadow.log is used to identify the credentials. Username is Manager and Password is forgot
+
+
+
+
+
+
+
+
+
+
+
 
 
 
