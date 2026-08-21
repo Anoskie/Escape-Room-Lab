@@ -79,7 +79,19 @@ the total number of packets is more than 28.
 
 - This tool is used during penetration testing to identify password vulnerabilities before malicious actors can exploit them.
 
-- John --wordlist=/usr/share/wordlists/rockyou.txt shadow.log is used to identify the credentials. Username is Manager and Password is forgot
+- John --wordlist=/usr/share/wordlists/rockyou.txt shadow.log is used to identify the credentials. Username is Manager and Password is forgot.
+
+
+
+   Question 6: What other credentials (username:password) could have been used to gain access also have SUDO privileges? Refer to shadow.log and sudoers.log.
+
+- After finding the credentials used to gain access, we are left with figuring out which credentials had Sudo privileges
+
+- It defines which users or groups can run specific commands as other users (typically as root) using the sudo command.
+
+- We have to check the sudoers file and investigate the accounts that have sudo privileges and compare them to the accounts cracked by John the Ripper.
+
+- After investigating, the account credentials that had the privileges is Sean:Spectre
 
 
 
