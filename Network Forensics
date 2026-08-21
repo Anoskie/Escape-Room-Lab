@@ -97,7 +97,25 @@ the total number of packets is more than 28.
 
   Question 7: What is the tool used to download malicious files on the system?
 
+- AFter identifying the accessed credentials, we now need to investigate the actions took by the attacker.
 
+- We will investigate the network traffic for file downloads. Our focus now shifts from SSH to HTTP.
+
+- HTTP is the base set of rules used by web browsers and servers to send and receive web pages, images, and other data over the internet.
+
+- Attackers use HTTP to download malicious tools or backdoor after gaining access. We use the filter "Http" in wireshark to investigate
+the incidents that occured.
+
+- When investigating the HTTP traffic, we can see that there are multiple GET get requests from the ip address 10.252.174.188 to the ip address
+23.20.23.147 showing that the attacker was downloading files from this Ip address. There were files like text/html and image/bmp.
+
+- In the HTTP headers, there is a field called User agent that tells web servers what device and browser you use. It shows that the tool used 
+is called Wget.
+
+- Wget is a free command-line tool used to download files from the web using HTTP, HTTPS, and FTP protocols.
+
+- The User agent shows the version used by the attacker and the operating system used was a Linux environment which is common
+among attackers to avoid using software that may be detected by the Target system.
 
 
 
