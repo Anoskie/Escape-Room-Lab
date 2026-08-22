@@ -139,7 +139,7 @@ backdoor that will survive system reboots by adding entries to the system's star
 
 
 
-  Question 9: What is the main malware MD5 hash?
+       Question 9: What is the main malware MD5 hash?
 
 -After identifying the attack method and files downloaded. We need to identify which file is the main payload from the three.
 
@@ -153,6 +153,29 @@ backdoor that will survive system reboots by adding entries to the system's star
 
 - But we need to check the MD5 hash. This hash can be found in the details tab of the file uploaded in Virus total.
 
+
+
+
+          Question 10:  What file has the script modified so the malware will start upon reboot?
+
+- After identifying the malware contained in the files, we now know one of the file's purpose is to establish a persistent backdoor.
+
+- This is seen as crucial for attackers as their malicious scripts continue to inhabit the system even after it reboots allowing long term 
+access.
+
+- We need to analyze the 3.html file and carefully investigate the script written. The first line moves the file with the malicious payload
+to a path called /var/mail/mail to hide it there since it is a system folder to minimize suspicion.
+
+- The main line we are interested in is the command modifying the /etc/rc.local system file. rc.local is a traditional Linux startup script
+that runs after the system reboots. So it is a clever tactic attackers use to establish persistence.
+
+- The attacker overwrites the rc.local scripts and add their modifications that are designed to start the malware that was moved to
+var/mail/mail which is the backdoor.
+
+- Waits for 1 second to ensure the malware gets assigned a Process ID, then fetches the ID and sends it to the rootkit interface to hide it from
+administrators, users and security programs. 
+
+- The tells the system the startup script completed normally without errors (exit 0).
 
 
 
