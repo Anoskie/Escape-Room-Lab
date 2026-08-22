@@ -119,6 +119,38 @@ among attackers to avoid using software that may be detected by the Target syste
 
 
 
+  Question 8: How many files the attacker downloaded to perform malware installation?
+
+- After identifying the tool used is wget, we have to know the files downloaded in order to perform the malware installation.
+
+- In Wireshark, we navigate to File > Export Objects > HTTP. Here we see a number of files downloaded as a part of the installation.
+
+- However, most of the files have a bmp extension and image files cannot be downloaded via a commandline. There are also files with the HTML
+extension.
+
+- The three files with the HTML extension are investigated further and it is discovered that the files were disguised as web content but
+in real sense were shell scripts written in bash.
+
+- The attacker downloaded 3 files named 1.html, 2.html and 3.html with the first two being ELF and the third one for establishing a persistent
+backdoor that will survive system reboots by adding entries to the system's startup configuration
+
+- This is a common tactic used by attackers to hide malicious payloads as web content in plain sight.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
