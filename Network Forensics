@@ -163,7 +163,7 @@ backdoor that will survive system reboots by adding entries to the system's star
 - This is seen as crucial for attackers as their malicious scripts continue to inhabit the system even after it reboots allowing long term 
 access.
 
-- We need to analyze the 3.html file and carefully investigate the script written. The first line moves the file with the malicious payload
+- We need to analyze the 3.html file and carefully investigate the script written. The second line moves the file with the malicious payload
 to a path called /var/mail/mail to hide it there since it is a system folder to minimize suspicion.
 
 - The main line we are interested in is the command modifying the /etc/rc.local system file. rc.local is a traditional Linux startup script
@@ -177,6 +177,17 @@ administrators, users and security programs.
 
 - The tells the system the startup script completed normally without errors (exit 0).
 
+
+
+          Question 11. Where did the malware keep the local files?
+
+- As discussed previously, we needed to investigate the malicious files diguised as html files. One of the files had a malicious
+script designed to start the malware.
+
+- The second line of the script (mv 1 /***/****/****) instructs the system to move the malicious payload to the directory and
+rename it mail.
+
+- The name of the directory where the malicious payload was moved to can be found in the file named 3.html.
 
 
 
