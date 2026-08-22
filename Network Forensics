@@ -15,8 +15,9 @@
 -After uploading it displayed details such as the HTTP headers, connections and open ports. I navigated to open ports and displayed two ports
       Port 80(HTTP)
       Port 22(SSH)
-- Secure Shell(SSH) is a network protocol used to for secure remote login from one computer to another. SSH is a recognized network so the attacker must have
-breached or had access to credentials that enabled him/her to acess the system. 
+- Secure Shell(SSH) is a network protocol used to for secure remote login from one computer to another.
+
+- The name of the service is dispalyed once you go to the open ports field
 
 
 
@@ -33,23 +34,23 @@ breached or had access to credentials that enabled him/her to acess the system.
 - What makes this alarming is the time difference between the traffic which are milliseconds apart. Normally, a user opens SSH one session at 
 a time which makes this traffic look very suspicious.
 
-- The conclusion is that the method used to gain access was Bruteforce attack. This type of attack involves checking all passwords or
+- The conclusion is that the method used to gain access was B*******e attack. This type of attack involves checking all passwords or
 combinations until the right one is found.
 
 
       Question 3: What was the tool the attacker possibly used to perform this attack?
 
-- The conclusion was the the method used to gain access was brute force attack
+- The conclusion was the the method used to gain access was b********e attack
 
 - What we have to figure out is the name of the tool that is designed to automate the process of attempting multiple usernames and password
 combinations against a target system at high speed until the correct comibation is found
 
-- The name of this tool is called hydra. Hydra is a is a parallelized login cracker which supports numerous protocols to attack. 
+- The name of this tool is called h***a. H***a is a is a parallelized login cracker which supports numerous protocols to attack. 
 
 - It is very fast and flexible, and new modules are easy to add. This tool is used by researchers to show the ease of gaining
 unauthorised access to a system.
 
-- What made the conclusion that the tool is hydra is when the invesigation of the multiple attempts with a span of milliseconds was done.
+- What made the conclusion that the tool is h***a is when the invesigation of the multiple attempts with a span of milliseconds was done.
 This behaviour of rapid SSH connection attempts is seen in the tool Hydra.
 
 
@@ -67,19 +68,19 @@ This behaviour of rapid SSH connection attempts is seen in the tool Hydra.
 the total number of packets is more than 28.
 
 - We only need to check the packet count and find the attempts that are more than the 26-28 range and we see there are two attempts consisting of
- 50 and 468 packets. We remove the two packets and remain with 52 attemps which can be concluded as failed attempts.
+ 50 and 468 packets. We remove the two packets and remain with ** attemps which can be concluded as failed attempts.
 
 
 
     Question 5: What credentials (username:password) were used to gain access? Refer to shadow.log and sudoers.log?
 
-- After the conclusion that there were a total of 52/54 failed attempts, we have to figure out the credentials entered to gain access
+- After the conclusion that there were a total of **/54 failed attempts, we have to figure out the credentials entered to gain access
 
 - We use a tool called John the Ripper which is an open-source password security auditing and password recovery tool available for many operating systems.
 
 - This tool is used during penetration testing to identify password vulnerabilities before malicious actors can exploit them.
 
-- John --wordlist=/usr/share/wordlists/rockyou.txt shadow.log is used to identify the credentials. Username is Manager and Password is forgot.
+- John --wordlist=/usr/share/wordlists/rockyou.txt shadow.log is used to identify the credentials. Username is M*****r and Password is f****t.
 
 
 
@@ -91,7 +92,7 @@ the total number of packets is more than 28.
 
 - We have to check the sudoers file and investigate the accounts that have sudo privileges and compare them to the accounts cracked by John the Ripper.
 
-- After investigating, the account credentials that had the privileges is Sean:Spectre
+- After investigating, the account credentials that had the privileges is S**n:S*****e
 
 
 
@@ -110,9 +111,9 @@ the incidents that occured.
 23.20.23.147 showing that the attacker was downloading files from this Ip address. There were files like text/html and image/bmp.
 
 - In the HTTP headers, there is a field called User agent that tells web servers what device and browser you use. It shows that the tool used 
-is called Wget.
+is called W**t.
 
-- Wget is a free command-line tool used to download files from the web using HTTP, HTTPS, and FTP protocols.
+- W**t is a free command-line tool used to download files from the web using HTTP, HTTPS, and FTP protocols.
 
 - The User agent shows the version used by the attacker and the operating system used was a Linux environment which is common
 among attackers to avoid using software that may be detected by the Target system.
@@ -121,7 +122,7 @@ among attackers to avoid using software that may be detected by the Target syste
 
   Question 8: How many files the attacker downloaded to perform malware installation?
 
-- After identifying the tool used is wget, we have to know the files downloaded in order to perform the malware installation.
+- After identifying the tool used, we have to know the files downloaded in order to perform the malware installation.
 
 - In Wireshark, we navigate to File > Export Objects > HTTP. Here we see a number of files downloaded as a part of the installation.
 
@@ -131,10 +132,37 @@ extension.
 - The three files with the HTML extension are investigated further and it is discovered that the files were disguised as web content but
 in real sense were shell scripts written in bash.
 
-- The attacker downloaded 3 files named 1.html, 2.html and 3.html with the first two being ELF and the third one for establishing a persistent
+- The attacker downloaded 3 files with the first two being ELF and the third one for establishing a persistent
 backdoor that will survive system reboots by adding entries to the system's startup configuration
 
 - This is a common tactic used by attackers to hide malicious payloads as web content in plain sight.
+
+
+
+  Question 9: What is the main malware MD5 hash?
+
+-After identifying the attack method and files downloaded. We need to identify which file is the main payload from the three.
+
+- MD5 stands for Message Direct Algorithm 5. It is a widely used hashing function that turns text or files of any size into a short, fixed 32-character code (128 bits). 
+
+- We should therefore use a tool called Virus total where we can upload the three files and then find the main malware file.
+
+- Virus total is used to analyse suspicious files, domains, IPs and URLs to detect malware and other breaches.
+
+- After uploading all the files. One is identified to have a purpose of periodically downloading and executing payloads from a remote server.
+
+- But we need to check the MD5 hash. This hash can be found in the details tab of the file uploaded in Virus total.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
