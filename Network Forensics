@@ -191,6 +191,28 @@ rename it mail.
 
 
 
+      Question 12: What is missing from ps.log?
+
+- After identifying the types of Malware, where and how it was stored in the system, the focus now shifts to the ps.log.
+
+- ps is a Linux command that is used to list all the processes that occurs in the system and the details of the process.
+
+- The list contains information like the user account, process Id, the process that is occuring, memory usage etc.
+
+- The ps command is used by soc analysts or incident responders when trying to spot suspicious background programs.
+
+- When we investigate the ps.log file further, we notice that one piece is missing. Yes we found the location of the malicious
+  payload and how it was designed to start after booting the system but where is the process information for the Malware?
+
+- The ps.log file should have displayed information on the process occuring in the directory where the Malware was hidden.
+
+- In one of the malicious files, the attacker loaded a Kernel Rootkit as we discovered previously. The purpose of the rootkit is 
+  attach itself into the kernel and manipulate the ps command.
+
+- Manipulating the ps command enables the attacker to filter out the Malware process so that it cannot be spoted by system administrators.
+
+
+
 
 
 
