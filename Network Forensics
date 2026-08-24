@@ -248,7 +248,43 @@ tries to check the processes that are currently running in the system using the 
 and one more that starts with 17.
 
 - All that is needed is to observe the IP addresses present and communications between them. We can see that the aatcker's IP contacted 
-the IP in question purposely to
+the IP in question.
+
+
+
+ Question 16: How many files the malware requested from external servers?
+
+- We again use wireshark and use HTTP filter to investigate the network traffic
+
+- Navigate to file > export objects > HTTP. You will see a list of files requested by the malware. 
+
+- We count these to get the total number apart from the first 3 files that were used to install the Malware
+
+
+
+  Question 17: What are the commands that the malware was receiving from attacker servers? Format: comma-separated in alphabetical order
+
+- The tool IDA pro is used for reverse engineering of the malware. Once compiled strings like "ipconfig are sored in the read only data section
+
+- Once IDA finds the string it tracks the instructions that references the address which are the hexadecimal values.
+
+- In order to understand these values, they need to be converted to ASCII format using a tool called cyberchef.
+
+- Cyberchef converts the values and the meaning is shown in cyberchef
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
