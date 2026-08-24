@@ -213,6 +213,23 @@ rename it mail.
 
 
 
+ Question 13: What is the main file used to remove this information from ps.log?
+
+- Further investigating the 3.html file, we look at the script in the 7th line.
+
+- The attacker wrote specific instructions of moving the 2.html file that contains the rootkit to the kernel
+server and uses uname -r to ensure the kernel version is the correct one then renames the file.
+
+- The attacker then adds the renamed file to etc/module which contains the list of modules that should be loaded upon
+booting. This creates the persistence where the rootkit loads on the Kernel whenever the system reboots.
+
+- The rootkit ensures it can control what information can be hidden like the malware running in the system even if one
+tries to check the processes that are currently running in the system using the ps command.
+
+- The name of the file can be found in the 3.html file.
+
+
+
 
 
 
