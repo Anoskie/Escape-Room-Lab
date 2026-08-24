@@ -230,6 +230,27 @@ tries to check the processes that are currently running in the system using the 
 
 
 
+   Question 14: Inside the Main function, what is the function that causes requests to those servers?
+
+- For this, a tool called Detect it easy(DIE) is used. The tool enables efficient file inspections across a broad range of platforms, including Windows, Linux, and MacOS.
+
+- The malware executable is uploaded to the DIE tool which inspects the file. The tool displays a pseudo code that executes a network request
+
+- The function is used to construct wget commands that enables the attcker to download more stuff or get commands from the attacker's server
+
+
+
+   Question 15: One of the IP's the malware contacted starts with 17. Provide the full IP.
+
+- We use the tool wireshark to investigate the HTTP traffic
+
+- We use the filter HTTP to monitor what happened. The are some IP's present. One if for the attacker, the other is the victims's
+and one more that starts with 17.
+
+- All that is needed is to observe the IP addresses present and communications between them. We can see that the aatcker's IP contacted 
+the IP in question purposely to
+
+
 
 
 
